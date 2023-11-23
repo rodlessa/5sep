@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ mymember.firstname }} {{ mymember.lastname }}
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+<h1>Separador:</h1>
+  <h3>{{ mymember.firstname }} {{ mymember.lastname }}</h3>
+  
+  <p>Carregado: {{ mymember.kilos }}</p>
+  
+  <p>Voltar para <a href="/members">inicio</a></p>
+</div>
+{% endblock %}

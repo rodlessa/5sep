@@ -1,0 +1,46 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Sistema de Separadores
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <h1>Separadores:</h1>
+  <h2>Top 5:</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Sobrenome</th>
+        <th scope="col">Carregados</th>
+        <th>Detalhes</th>
+      </tr>
+    </thead>
+        <tbody>
+  {% for x in top5 %}
+  <tr>
+  <td>{{ x.firstname }}</td>
+  <td>{{ x.lastname }}</td>
+  <td>{{x.kilos}}</td>
+  <td><a href="details/{{ x.id }}">Detalhes</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<div class="todos_separadores">
+<h1>Todos separadores: </h1>
+<div class="row">
+  <ul>
+    {% for x in mymembers %}
+    <div class="col">
+      <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+    </div>
+    {% endfor %}
+  </ul>
+</div>
+</div>
+  </div>
+{% endblock %}
