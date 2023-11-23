@@ -25,6 +25,9 @@ services:
     ports: 
       - '8000:8000'
 ```
+
+Dockerfile
+
 ```bash
 FROM python:3.6
 
