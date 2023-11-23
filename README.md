@@ -17,3 +17,26 @@ Sem docker:
   pip install -r requirements.txt
   py manage.py runserver 
 ```
+compose.yml
+```bash
+services: 
+  web: 
+    build: app 
+    ports: 
+      - '8000:8000'
+```
+```bash
+FROM python:3.6
+
+WORKDIR /app
+ENV PYTHONUNBUFFERED=1
+COPY . /app
+
+RUN apt-get update \
+    && apt-get install -y gettext libgettextpo-dev \
+    && pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 8000
+
+CMD ["python", "manage.py", "runserver","0.0.0.0:8000"]
+```
