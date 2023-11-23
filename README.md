@@ -3,13 +3,17 @@
 
 CRUD para logistica, gravar separadores e exibir os top 5, criado em 30 miutos com Django e Bootstrap, SQLite como DB.
 
-Instalação de pacotes necessarios para roda:
+Rodar com docker:
 
-```python
-  pip install -r requirements.txt
+```bash
+  git clone https://github.com/rodlessa/5sep.git
+  cd 5sep
+  docker compose up
 ```
-    
-Iniciar o webserver:    
-```python
+Sem docker:
+
+```bash
+  cd app
+  pip install -r requirements.txt
   py manage.py runserver 
 ```
